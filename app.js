@@ -42,7 +42,7 @@ function formatOpenMetrics(data) {
     description: 'Winddirection',
     type: 'guage',
     source: 'OpenWeather',
-    value: degToCompass(data.wind.deg)
+    value: data.wind.deg
   };
   output += formatOpenMetricsSensor(sensor);
 
