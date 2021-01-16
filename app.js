@@ -52,7 +52,7 @@ function formatOpenMetrics(data) {
     description: 'Windspeed',
     type: 'guage',
     source: 'OpenWeather',
-    value: degToCompass(data.wind.speed)
+    value: data.wind.speed
   };
   output += formatOpenMetricsSensor(sensor);
   
@@ -62,7 +62,7 @@ function formatOpenMetrics(data) {
     description: 'Windgust',
     type: 'guage',
     source: 'OpenWeather',
-    value: degToCompass(data.wind.gust)
+    value: data.wind.gust
   };
   output += formatOpenMetricsSensor(sensor);
 
