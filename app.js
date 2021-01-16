@@ -6,8 +6,8 @@ const axios = require('axios');
 
 const PORT = '9300';
 const HOST = '0.0.0.0';
-const API_KEY = '194ae2eea3f9d7acee7f8e5d6ed88d77'
-const API_LOCATION_ID = '2759794';
+const API_KEY = process.env.OPEN_WEATHER_API_KEY || 'api_key_required';
+const API_LOCATION_ID = process.env.OPEN_WEATHER_LOCATION_ID || 'location_id_required';
 const API_ENDPOINT = `https://api.openweathermap.org/data/2.5/weather`;
 const API_STRING = `${API_ENDPOINT}?id=${API_LOCATION_ID}&units=metric&appid=${API_KEY}`;
 const app = express();
@@ -66,7 +66,7 @@ function formatOpenMetrics(data) {
   };
   output += formatOpenMetricsSensor(sensor);
 
-  
+
   // Air Tempearture
   sensor = {
     name: 'sensor_air_temperature',
