@@ -57,14 +57,14 @@ function formatOpenMetrics(data) {
   output += formatOpenMetricsSensor(sensor);
   
    // WindGust
-   sensor = {
-    name: 'sensor_wind_gust',
-    description: 'Windgust',
-    type: 'guage',
-    source: 'OpenWeather',
-    value: data.wind.gust
-  };
-  output += formatOpenMetricsSensor(sensor);
+//   sensor = {
+//    name: 'sensor_wind_gust',
+//    description: 'Windgust',
+//    type: 'guage',
+//    source: 'OpenWeather',
+//    value: data.wind.gust
+//  };
+//  output += formatOpenMetricsSensor(sensor);
 
 
   // Air Tempearture

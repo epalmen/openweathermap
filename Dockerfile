@@ -12,6 +12,6 @@ RUN npm install
 COPY . .
 
 # Expose default port 9100 and start the application
-EXPOSE 9100
+EXPOSE 9300
 CMD ["node", "app.js"]
 
