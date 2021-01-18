@@ -42,7 +42,7 @@ function formatOpenMetrics(data) {
     description: 'Winddirection',
     type: 'guage',
     source: 'OpenWeather',
-    value: data.wind.deg
+    value: degToCompassNum(data.wind.deg)
   };
   output += formatOpenMetricsSensor(sensor);
 
@@ -110,6 +110,15 @@ function degToCompass(num) {
   return arr[ Math.abs(val) ] ;
 }
 
+
+//convert wind degrees to direction
+function degToCompassNum(num) { 
+  while( num < 0 ) num += 360 ;
+  while( num >= 360 ) num -= 360 ; 
+  let val= Math.round( (num -11.25 ) / 22.5 ) ;
+  let arr=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16] ;
+  return arr[ Math.abs(val) ] ;
+}
 
 // Converts readings from OpenWeather API to a sipler JSON Output
 function formatJsonMetrics(data) {
